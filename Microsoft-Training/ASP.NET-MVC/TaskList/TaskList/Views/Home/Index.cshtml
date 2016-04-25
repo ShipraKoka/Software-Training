@@ -1,0 +1,40 @@
+﻿@{
+    Layout = null;
+}
+
+<!DOCTYPE html>
+
+<html>
+<head>
+    <meta name="viewport" content="width=device-width" />
+    <title></title>
+</head>
+<body>
+    <div>
+        <h1>My Tasks</h1>
+        <ul>
+            @foreach (var task in ViewData.Model)
+            {
+                <li>
+                    @if (task.IsCompleted)
+                    {
+                        <del>
+                            @task.EntryDate.ToShortDateString() -- @task.Task1
+                        </del>
+                    }
+                    else
+                    {
+                        <p>
+                            <a href="/Home/Complete/@task.Id">Complete</a>
+                            @task.EntryDate.ToShortDateString() -- @task.Task1
+                        </p>
+
+                    }
+                </li>
+            }
+        </ul>
+        <br/><br/>
+        <a href="/Home/Create">Add New Task</a>
+    </div>
+</body>
+</html>
