@@ -1,1 +1,3 @@
-# Software-Training
+# Software Training
+
+Online software application projects.
